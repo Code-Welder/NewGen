@@ -93,7 +93,7 @@ console.log('Initial courses array');
 console.table(courses);
 
 testInputs.forEach((range, i) => {
-  console.group('\x1b[36m%s\x1b[0m', '\n~~~\nTEST - ' + i + '\n~~~');
+  console.group('\x1b[36m%s\x1b[0m', '\n~~~\nTEST - ' + (i + 1) + '\n~~~');
   console.log('required range: ' + range.map(el => (el === null ? ' - ' : el)));
 
   const filtered = filterCourses(range, courses);

@@ -32,11 +32,12 @@ output:
   ┌─────────┬─────────────────────────┬───────────────┐
   │ (index) │          name           │    prices     │
   ├─────────┼─────────────────────────┼───────────────┤
-  │    0    │   'Courses in Italy'    │ [ 100, 200 ]  │
-  │    1    │   'Courses in Russia'   │ [ null, 400 ] │
-  │    2    │   'Courses in China'    │  [ 50, 250 ]  │
-  │    3    │    'Courses in USA'     │ [ 200, null ] │
-  │    4    │ 'Courses in Kazakhstan' │  [ 56, 324 ]  │
+  │    0    │  'Courses in England'   │  [ 0, 100 ]   │
+  │    1    │   'Courses in Italy'    │ [ 100, 200 ]  │
+  │    2    │   'Courses in Russia'   │ [ null, 400 ] │
+  │    3    │   'Courses in China'    │  [ 50, 250 ]  │
+  │    4    │    'Courses in USA'     │ [ 200, null ] │
+  │    5    │ 'Courses in Kazakhstan' │  [ 56, 324 ]  │
   └─────────┴─────────────────────────┴───────────────┘
 ```
 sorted: 
@@ -44,10 +45,11 @@ sorted:
   ┌─────────┬─────────────────────────┬───────────────┐
   │ (index) │          name           │    prices     │
   ├─────────┼─────────────────────────┼───────────────┤
-  │    0    │   'Courses in China'    │  [ 50, 250 ]  │
-  │    1    │ 'Courses in Kazakhstan' │  [ 56, 324 ]  │
-  │    2    │   'Courses in Italy'    │ [ 100, 200 ]  │
-  │    3    │    'Courses in USA'     │ [ 200, null ] │
-  │    4    │   'Courses in Russia'   │ [ null, 400 ] │
+  │    0    │  'Courses in England'   │  [ 0, 100 ]   │
+  │    1    │   'Courses in China'    │  [ 50, 250 ]  │
+  │    2    │ 'Courses in Kazakhstan' │  [ 56, 324 ]  │
+  │    3    │   'Courses in Italy'    │ [ 100, 200 ]  │
+  │    4    │    'Courses in USA'     │ [ 200, null ] │
+  │    5    │   'Courses in Russia'   │ [ null, 400 ] │
   └─────────┴─────────────────────────┴───────────────┘
 ```

@@ -34,7 +34,7 @@ function filterCourses(
     const minPrice = course.prices[0];
     const maxPrice = course.prices[1];
 
-    if (isNullish(minPrice) && isNullish(maxPrice)) return true;
+    if (isNullish(minPrice) && isNullish(maxPrice)) return false;
 
     if (!isNullish(requiredLowerPrice) && !isNullish(requiredHigherPrice)) {
       if (!isNullish(minPrice)) {
@@ -88,6 +88,9 @@ const requiredRange2: TPriceRange = [100, 350];
 const requiredRange3: TPriceRange = [200, null];
 
 const testInputs = [requiredRange1, requiredRange2, requiredRange3];
+
+console.log('Initial courses array');
+console.table(courses);
 
 testInputs.forEach((range, i) => {
   console.group('\x1b[36m%s\x1b[0m', '\n~~~\nTEST - ' + i + '\n~~~');

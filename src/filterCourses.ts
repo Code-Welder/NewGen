@@ -20,18 +20,18 @@ export default function filterCourses(
 
     if (!isNullish(requiredLowerPrice) && !isNullish(requiredHigherPrice)) {
       if (!isNullish(minPrice)) {
-        return minPrice < requiredLowerPrice;
+        return minPrice <= requiredHigherPrice;
       }
 
       if (!isNullish(maxPrice)) {
-        return maxPrice > requiredHigherPrice;
+        return maxPrice >= requiredHigherPrice;
       }
     }
 
     let isLowerPriceSetisfies = false;
     let isHigherPriceSetisfies = false;
 
-    if (requiredLowerPrice !== null) {
+    if (!isNullish(requiredLowerPrice)) {
       if (
         (!isNullish(minPrice) && requiredLowerPrice < minPrice) ||
         (!isNullish(maxPrice) && requiredLowerPrice > maxPrice)
@@ -45,10 +45,7 @@ export default function filterCourses(
     }
 
     if (!isNullish(requiredHigherPrice)) {
-      if (
-        (!isNullish(minPrice) && requiredHigherPrice < minPrice) ||
-        (!isNullish(maxPrice) && requiredHigherPrice > maxPrice)
-      ) {
+      if (!isNullish(minPrice) && requiredHigherPrice < minPrice) {
         return false;
       } else {
         isHigherPriceSetisfies = true;

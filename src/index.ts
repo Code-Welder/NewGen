@@ -109,7 +109,7 @@ testInputs.forEach((range, i) => {
 // sorting
 
 function sortCourses(courses: TCourse[]): TCourse[] {
-  return courses.sort((prevCourse, nextCourse) => {
+  return [...courses].sort((prevCourse, nextCourse) => {
     const prevLowerPrice = prevCourse.prices[0];
     const prevHigherPrice = prevCourse.prices[1];
     const isPrevPricesNullish =

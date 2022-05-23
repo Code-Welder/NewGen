@@ -6,7 +6,7 @@
 > cd NewGen
 > npm i
 > tsc
-> node build/index.js
+> node build/testLog.js
 ```
 
 courses:

@@ -9,47 +9,41 @@
 > node build/testLog.js
 ```
 
-courses:
-```js
-┌─────────┬─────────────────────────┬────────────────┐
-│ (index) │          name           │     prices     │
-├─────────┼─────────────────────────┼────────────────┤
-│    0    │  'Courses in England'   │   [ 0, 100 ]   │
-│    1    │  'Courses in Germany'   │ [ 500, null ]  │
-│    2    │   'Courses in Italy'    │  [ 100, 200 ]  │
-│    3    │   'Courses in Russia'   │ [ null, 400 ]  │
-│    4    │   'Courses in China'    │  [ 50, 250 ]   │
-│    5    │    'Courses in USA'     │ [ 200, null ]  │
-│    6    │ 'Courses in Kazakhstan' │  [ 56, 324 ]   │
-│    7    │   'Courses in France'   │ [ null, null ] │
-└─────────┴─────────────────────────┴────────────────┘
-```
+example:
 
-input range `[null, 200]`
+```js
+const courses = [
+  {name: 'Courses in England', prices: [0, 100]},
+  {name: 'Courses in Germany', prices: [500, null]},
+  {name: 'Courses in Italy', prices: [100, 200]},
+  {name: 'Courses in Russia', prices: [null, 400]},
+  {name: 'Courses in China', prices: [50, 250]},
+  {name: 'Courses in USA', prices: [200, null]},
+  {name: 'Courses in Kazakhstan', prices: [56, 324]},
+  {name: 'Courses in France', prices: [null, null]},
+]
 
-output:
-```js
-  ┌─────────┬─────────────────────────┬───────────────┐
-  │ (index) │          name           │    prices     │
-  ├─────────┼─────────────────────────┼───────────────┤
-  │    0    │  'Courses in England'   │  [ 0, 100 ]   │
-  │    1    │   'Courses in Italy'    │ [ 100, 200 ]  │
-  │    2    │   'Courses in Russia'   │ [ null, 400 ] │
-  │    3    │   'Courses in China'    │  [ 50, 250 ]  │
-  │    4    │    'Courses in USA'     │ [ 200, null ] │
-  │    5    │ 'Courses in Kazakhstan' │  [ 56, 324 ]  │
-  └─────────┴─────────────────────────┴───────────────┘
-```
-sorted: 
-```js
-  ┌─────────┬─────────────────────────┬───────────────┐
-  │ (index) │          name           │    prices     │
-  ├─────────┼─────────────────────────┼───────────────┤
-  │    0    │  'Courses in England'   │  [ 0, 100 ]   │
-  │    1    │   'Courses in China'    │  [ 50, 250 ]  │
-  │    2    │ 'Courses in Kazakhstan' │  [ 56, 324 ]  │
-  │    3    │   'Courses in Italy'    │ [ 100, 200 ]  │
-  │    4    │    'Courses in USA'     │ [ 200, null ] │
-  │    5    │   'Courses in Russia'   │ [ null, 400 ] │
-  └─────────┴─────────────────────────┴───────────────┘
+const requiredRange = [null, 200]
+
+const filtered = filterCourses(requiredRange, courses)
+
+// [
+//   { name: 'Courses in England', prices: [ 0, 100 ] },
+//   { name: 'Courses in Italy', prices: [ 100, 200 ] },
+//   { name: 'Courses in Russia', prices: [ null, 400 ] },
+//   { name: 'Courses in China', prices: [ 50, 250 ] },
+//   { name: 'Courses in USA', prices: [ 200, null ] },
+//   { name: 'Courses in Kazakhstan', prices: [ 56, 324 ] }
+// ]
+
+const sorted = sortCourses(filtered)
+
+// [
+//   { name: 'Courses in England', prices: [ 0, 100 ] },
+//   { name: 'Courses in China', prices: [ 50, 250 ] },
+//   { name: 'Courses in Kazakhstan', prices: [ 56, 324 ] },
+//   { name: 'Courses in Italy', prices: [ 100, 200 ] },
+//   { name: 'Courses in USA', prices: [ 200, null ] },
+//   { name: 'Courses in Russia', prices: [ null, 400 ] }
+// ]
 ```
